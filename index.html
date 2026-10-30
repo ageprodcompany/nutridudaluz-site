@@ -1,3 +1,15 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0D1811">
+<link rel="icon" type="image/svg+xml" href="img/melancia.svg">
+<meta property="og:title" content="Eduarda da Luz · Nutricionista">
+<meta property="og:description" content="Nutrição clínica baseada em ciência e individualidade. Atendimento online. CRN-2 22724.">
+<meta property="og:image" content="https://nutridudaluz.com.br/img/hero.jpg">
+<meta property="og:url" content="https://nutridudaluz.com.br/">
+<meta property="og:type" content="website">
 <title>Eduarda da Luz Nutricionista</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="color-scheme" content="dark">
@@ -112,15 +124,33 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;backgroun
 .seal text{font-family:var(--display);font-weight:800;font-size:11.5px;fill:var(--green)}
 @keyframes spin{to{transform:rotate(360deg)}}
 @media (max-width:900px){
-  .hero{grid-template-columns:1fr;min-height:0}
-  .hero-photo{order:-1;height:34svh;min-height:220px}
-  .hero-photo .frame{-webkit-mask:radial-gradient(circle at calc(100% - 78px) 100%,transparent 74px,#000 75px);mask:radial-gradient(circle at calc(100% - 78px) 100%,transparent 74px,#000 75px)}
-  .seal{left:auto;right:14px;bottom:-64px;width:128px;height:128px}
-  .hero-copy{padding:80px 20px 36px;gap:16px}
-  .hero h1{font-size:clamp(34px,9.6vw,54px)}
-  .hero .lead{font-size:16px}
-  .facts{grid-template-columns:1fr;gap:12px}
+  .hero{display:flex;flex-direction:column;min-height:0}
+  .hero-copy{display:contents}
+  .hero-copy > *{margin-inline:20px}
+  .hero .tag{order:1;margin-top:28px;font-size:11.5px}
+  .hero h1{order:2;margin-top:16px;font-size:clamp(42px,12.2vw,64px);line-height:.95}
+  .hero .lead{order:3;margin-top:16px;font-size:18px;line-height:1.5}
+  .hero .ctas{order:4;margin-top:22px;flex-direction:column;align-items:stretch;gap:14px}
+  .hero .ctas .btn{width:100%;padding:17px 24px;font-size:17px}
+  .hero .ctas > a:not(.btn){align-self:center;font-size:16px}
+  .hero-photo{order:5;position:relative;margin:28px 20px 0;height:auto;min-height:0;aspect-ratio:4/3;border-radius:var(--r-lg)}
+  .hero-photo .frame{border-radius:var(--r-lg);-webkit-mask:radial-gradient(circle at calc(100% - 58px) 100%,transparent 60px,#000 61px);mask:radial-gradient(circle at calc(100% - 58px) 100%,transparent 60px,#000 61px)}
+  .hero-photo .frame img{height:100%;object-position:50% 22%}
+  .seal{left:auto;right:4px;bottom:-50px;width:108px;height:108px}
+  .hero .cred{order:6;margin-top:64px;align-self:stretch;padding:12px 16px 12px 12px}
+  .hero .tag{letter-spacing:.08em}
+  .hero .cred{display:grid;grid-template-columns:auto 1fr;gap:12px 14px;padding:14px 16px}
+  .cred .crn{grid-column:1/-1;padding:12px 0 0;border-left:0;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline}
+  .cred small{font-size:11px}
+  .cred b{font-size:19px}
+  .cred .crn b{font-size:20px}
+  .hero .facts{order:7;margin-top:22px;margin-bottom:40px;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding-top:20px}
+  .fact{flex-direction:column;gap:6px}
+  .fact svg{margin-top:0}
+  .fact b{font-size:21px}
+  .fact span{font-size:14.5px}
 }
+@media (max-width:380px){.hero .facts{grid-template-columns:1fr}.fact{flex-direction:row}}
 
 /* faixa */
 .marquee{background:var(--deep);color:var(--deep-ink);overflow:hidden;padding-block:14px}
@@ -316,12 +346,35 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
 .rise{transition:transform 1s cubic-bezier(.2,.8,.2,1)}
 .js .rise.wait{transform:translateY(34px)}
 @media (hover:none){.card:hover,.cred:hover{transform:none}}
+/* leitura no celular */
+@media (max-width:600px){
+  body{font-size:17.5px}
+  h2{font-size:clamp(34px,9.4vw,44px);line-height:1}
+  .sh p{font-size:18px}
+  .tag{font-size:11.5px}
+  .pq b{font-size:18.5px}
+  .belief b{font-size:19px}
+  .belief p,.step li,.check li,.ask p{font-size:16.5px;line-height:1.5}
+  .step .one{font-size:18px}
+  .card ul{font-size:16.5px}
+  .card h3{font-size:26px}
+  details p{font-size:17px;line-height:1.55}
+  summary{font-size:18px;padding:18px 18px}
+  .note{font-size:15px}
+  .final .lead{font-size:18px}
+  .final .btn-primary{width:100%}
+  footer{font-size:14.5px}
+  .mbar b{font-size:16.5px}
+  .mbar small{font-size:12.5px}
+}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation:none!important}
   .rise,.js .rise.wait,.js .cards.wait .card{transform:none;transition:none}
 }
 </style>
+</head>
+<body>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#E8483B"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
@@ -654,7 +707,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
   var img=document.getElementById('heroImg'), steps=document.getElementById('steps'), prog=document.getElementById('prog'), ticking=false;
   function frame(){
     var y=window.scrollY, h=window.innerHeight;
-    img.style.transform='translateY('+(-Math.min(y,700)*0.06)+'px)';
+    img.style.transform=window.innerWidth>900?'translateY('+(-Math.min(y,700)*0.06)+'px)':'';
     var r=steps.getBoundingClientRect();
     prog.style.width=(Math.min(1,Math.max(0,(h*0.6-r.top)/r.height))*100).toFixed(1)+'%';
     stepEls.forEach(function(el){var b=el.getBoundingClientRect();el.classList.toggle('on',b.top<h*0.6&&b.bottom>h*0.35);});
@@ -664,3 +717,6 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
   frame();
 })();
 </script>
+
+</body>
+</html>
