@@ -276,6 +276,10 @@ a.card,a.card *{text-decoration:none!important}
 .card:hover .btn-primary{background:#E8483B;color:#FFFFFF}
 .card.feat{border:3px solid transparent;background:linear-gradient(#F6C445,#F6C445) padding-box,conic-gradient(from var(--a),#E8483B,#F6C445,#FFFCF6,#E8483B) border-box;animation:trace 4s linear infinite;padding:27px}
 .card.feat .btn-primary{animation:nudge 2.6s ease-in-out infinite}
+.card.feat2{border:3px solid transparent;background:linear-gradient(#F8C9C0,#F8C9C0) padding-box,conic-gradient(from var(--a),#1F5A35,#F8C9C0,#FFFCF6,#1F5A35) border-box;animation:trace 5s linear infinite;padding:27px}
+.card.feat2::before{background:linear-gradient(135deg,#F8C9C0 0%,#F6A99B 55%,#F3B98A 100%)}
+.card.feat2 .flag{background:#1F5A35;color:#FBF1DE}
+.card.feat2 .total,.card.feat2 .per{color:#3D2A26}
 .card .flag{position:absolute;top:-14px;right:22px;z-index:3;background:#E8483B;color:#FFFFFF;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:7px 12px;border-radius:999px}
 @keyframes nudge{0%,70%,100%{transform:translateY(0) scale(1)}78%{transform:translateY(-3px) scale(1.04)}86%{transform:translateY(0) scale(1)}92%{transform:translateY(-2px) scale(1.02)}}
 .note{margin-top:24px;font-size:14px;color:var(--deep-muted);max-width:60em;display:flex;gap:10px}
@@ -356,6 +360,9 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
 .compare thead th:first-child{width:auto}
 .compare thead th.hl{color:#1F2A22;background:var(--sun);border-radius:12px 12px 0 0}
 .compare tbody td:nth-child(3){background:rgba(246,196,69,.08)}
+.compare thead th.hl2{color:#1F2A22;background:#F8C9C0;border-radius:12px 12px 0 0}
+.compare tbody td:nth-child(4){background:rgba(248,201,192,.07)}
+.compare tr.sec td,.compare tr.sec th{background:transparent!important}
 .compare tr.sec th{text-align:left;padding-top:22px;font-size:12.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--sun)}
 .compare tr.sec th{background:transparent}
 .compare svg.y{width:20px;height:20px;display:inline-block;vertical-align:middle}
@@ -566,7 +573,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>Avalia sua evolução e conversa sobre as dificuldades</li>
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>Analisa os resultados dos exames, quando solicitados</li>
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>Ajusta o plano alimentar e a suplementação, quando indicada</li>
-          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Nos planos de 3 e 6 meses, você tem assessoria com aulão mensal, e-books e materiais entre as consultas</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Nos planos de 3 e 6 meses, você tem assessoria entre as consultas: dúvidas pelo WhatsApp, aulão mensal, e-books e materiais</li>
         </ul>
       </div>
       <div class="photos">
@@ -599,15 +606,15 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
           <h3>Acompanhamento de 3 meses</h3>
           <div class="price"><span class="val" data-to="3">3</span><span class="per">consultas, 1 por mês</span></div>
           <p class="total">Sem retornos avulsos: o acompanhamento acontece nas consultas mensais e na assessoria</p>
-          <ul><li><svg aria-hidden="true"><use href="#i-check-g"/></svg>1 consulta por mês, a primeira de 1h a 1h30</li><li><svg aria-hidden="true"><use href="#i-check-g"/></svg>Planejamento alimentar ajustado a cada consulta</li><li><svg aria-hidden="true"><use href="#i-check-g"/></svg>Avaliação de exames e suplementação, quando indicada</li><li><svg aria-hidden="true"><use href="#i-check-g"/></svg><span><b>Assessoria:</b> aulão ao vivo mensal em grupo, e-books e materiais de apoio</span></li></ul>
+          <ul><li><svg aria-hidden="true"><use href="#i-check-g"/></svg>1 consulta por mês, a primeira de 1h a 1h30</li><li><svg aria-hidden="true"><use href="#i-check-g"/></svg>Planejamento alimentar ajustado a cada consulta</li><li><svg aria-hidden="true"><use href="#i-check-g"/></svg>Avaliação de exames e suplementação, quando indicada</li><li><svg aria-hidden="true"><use href="#i-check-g"/></svg><span><b>Assessoria:</b> dúvidas pelo WhatsApp, aulão ao vivo mensal em grupo, e-books e materiais de apoio</span></li></ul>
           <span class="btn btn-primary">Quero os 3 meses <span class="arw" aria-hidden="true">→</span></span>
         </a>
-        <a class="card" href="https://wa.me/5551989371332?text=Ol%C3%A1%2C%20Eduarda%21%20Vim%20pelo%20site%20e%20tenho%20interesse%20no%20Acompanhamento%20de%206%20meses." target="_blank" rel="noopener" aria-label="Quero os 6 meses: abre o WhatsApp">
+        <a class="card feat2" href="https://wa.me/5551989371332?text=Ol%C3%A1%2C%20Eduarda%21%20Vim%20pelo%20site%20e%20tenho%20interesse%20no%20Acompanhamento%20de%206%20meses." target="_blank" rel="noopener" aria-label="Quero os 6 meses: abre o WhatsApp">
           <span class="flag">Com assessoria</span><span class="kind">6 meses</span>
           <h3>Acompanhamento de 6 meses</h3>
           <div class="price"><span class="val" data-to="6">6</span><span class="per">consultas, 1 por mês</span></div>
           <p class="total">Sem retornos avulsos: o acompanhamento acontece nas consultas mensais e na assessoria</p>
-          <ul><li><svg aria-hidden="true"><use href="#i-check-g"/></svg>1 consulta por mês, a primeira de 1h a 1h30</li><li><svg aria-hidden="true"><use href="#i-check-g"/></svg>Planejamento alimentar ajustado a cada consulta</li><li><svg aria-hidden="true"><use href="#i-check-g"/></svg>Avaliação de exames e suplementação, quando indicada</li><li><svg aria-hidden="true"><use href="#i-check-g"/></svg><span><b>Assessoria:</b> aulão ao vivo mensal em grupo, e-books e materiais de apoio</span></li></ul>
+          <ul><li><svg aria-hidden="true"><use href="#i-check-g"/></svg>1 consulta por mês, a primeira de 1h a 1h30</li><li><svg aria-hidden="true"><use href="#i-check-g"/></svg>Planejamento alimentar ajustado a cada consulta</li><li><svg aria-hidden="true"><use href="#i-check-g"/></svg>Avaliação de exames e suplementação, quando indicada</li><li><svg aria-hidden="true"><use href="#i-check-g"/></svg><span><b>Assessoria:</b> dúvidas pelo WhatsApp, aulão ao vivo mensal em grupo, e-books e materiais de apoio</span></li></ul>
           <span class="btn btn-primary">Quero os 6 meses <span class="arw" aria-hidden="true">→</span></span>
         </a>
         </div>
@@ -615,7 +622,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
       <div class="compare rise">
         <h3>O que cada formato inclui</h3>
         <div class="tbl"><table>
-          <thead><tr><th scope="col"><span class="sr">Item</span></th><th scope="col">Consulta<br>individual</th><th scope="col" class="hl">3 meses</th><th scope="col">6 meses</th></tr></thead>
+          <thead><tr><th scope="col"><span class="sr">Item</span></th><th scope="col">Consulta<br>individual</th><th scope="col" class="hl">3 meses</th><th scope="col" class="hl2">6 meses</th></tr></thead>
           <tbody>
             <tr class="sec"><th colspan="4" scope="colgroup">Consultas</th></tr>
             <tr><th scope="row">Primeira consulta, de 1h a 1h30</th><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td></tr>
@@ -624,6 +631,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
             <tr><th scope="row">Solicitação e avaliação de exames, quando necessário</th><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td></tr>
             <tr><th scope="row">Suplementação, quando indicada</th><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td></tr>
             <tr class="sec"><th colspan="4" scope="colgroup">Assessoria nutricional</th></tr>
+            <tr><th scope="row">Dúvidas pelo WhatsApp entre as consultas</th><td><span class="no" aria-label="Não inclui">–</span></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td></tr>
             <tr><th scope="row">Aulão ou live mensal em grupo sobre educação alimentar</th><td><span class="no" aria-label="Não inclui">–</span></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td></tr>
             <tr><th scope="row">E-books educativos</th><td><span class="no" aria-label="Não inclui">–</span></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td></tr>
             <tr><th scope="row">E-books para datas comemorativas</th><td><span class="no" aria-label="Não inclui">–</span></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td></tr>
@@ -661,7 +669,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
         </details>
         <details>
           <summary>Qual a diferença entre a consulta individual e os planos? <span class="pm" aria-hidden="true"></span></summary>
-          <p>A consulta individual inclui a avaliação nutricional e um retorno. Os planos de três ou seis meses têm uma consulta por mês e assessoria nutricional durante todo o período: aulão ao vivo mensal em grupo, e-books e materiais de apoio.</p>
+          <p>A consulta individual inclui a avaliação nutricional e um retorno. Os planos de três ou seis meses têm uma consulta por mês e assessoria nutricional durante todo o período: dúvidas pelo WhatsApp, aulão ao vivo mensal em grupo, e-books e materiais de apoio.</p>
         </details>
         <details>
           <summary>Preciso mudar toda a minha alimentação de uma vez? <span class="pm" aria-hidden="true"></span></summary>
