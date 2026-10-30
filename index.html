@@ -360,7 +360,9 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
 .compare tr.sec th{background:transparent}
 .compare svg.y{width:20px;height:20px;display:inline-block;vertical-align:middle}
 .compare .no{color:rgba(255,255,255,.3);font-weight:800}
-.compare td b{font-size:19px;font-weight:800;color:var(--sun)}
+.compare .qt{display:inline-flex;flex-direction:column;line-height:1.1}
+.compare .qt b{font-size:20px;font-weight:800;color:var(--sun)}
+.compare .qt small{font-size:12px;color:var(--deep-muted);white-space:nowrap}
 .compare tbody tr:not(.sec):hover th{color:var(--deep-ink)}
 .compare tbody tr:not(.sec):hover{background:rgba(255,255,255,.03)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
@@ -372,6 +374,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
   .compare tbody th{font-size:14.5px}
   .compare tbody th{padding-right:8px}
   .compare svg.y{width:18px;height:18px}
+  .compare .qt small{font-size:11px}
 }
 /* leitura no celular */
 @media (max-width:600px){
@@ -615,9 +618,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
           <thead><tr><th scope="col"><span class="sr">Item</span></th><th scope="col">Consulta<br>individual</th><th scope="col" class="hl">3 meses</th><th scope="col">6 meses</th></tr></thead>
           <tbody>
             <tr class="sec"><th colspan="4" scope="colgroup">Consultas</th></tr>
-            <tr><th scope="row">Primeira consulta completa, de 1h a 1h30</th><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td></tr>
-            <tr><th scope="row">Retorno</th><td><b>1</b></td><td><span class="no" aria-label="Não inclui">–</span></td><td><span class="no" aria-label="Não inclui">–</span></td></tr>
-            <tr><th scope="row">Consultas mensais</th><td><span class="no" aria-label="Não inclui">–</span></td><td><b>3</b></td><td><b>6</b></td></tr>
+            <tr><th scope="row">Primeira consulta, de 1h a 1h30</th><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td></tr>
+            <tr><th scope="row">Consultas incluídas</th><td><span class="qt"><b>1</b><small>+ 1 retorno</small></span></td><td><span class="qt"><b>3</b><small>1 por mês</small></span></td><td><span class="qt"><b>6</b><small>1 por mês</small></span></td></tr>
             <tr><th scope="row">Planejamento alimentar individualizado</th><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td></tr>
             <tr><th scope="row">Solicitação e avaliação de exames, quando necessário</th><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td></tr>
             <tr><th scope="row">Suplementação, quando indicada</th><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td></tr>
