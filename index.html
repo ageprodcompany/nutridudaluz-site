@@ -288,12 +288,26 @@ a.card,a.card *{text-decoration:none!important}
 @keyframes nudge{0%,70%,100%{transform:translateY(0) scale(1)}78%{transform:translateY(-3px) scale(1.04)}86%{transform:translateY(0) scale(1)}92%{transform:translateY(-2px) scale(1.02)}}
 .note{margin-top:24px;font-size:14px;color:var(--deep-muted);max-width:60em;display:flex;gap:10px}
 .note svg{flex-shrink:0;width:18px;height:18px;margin-top:2px}
-.swipe{display:none;margin-top:12px;font-size:13px;color:var(--deep-muted);font-weight:600}
+.swipe{display:none;margin-top:14px;font-size:14px;color:var(--deep-muted);font-weight:600;align-items:center;gap:10px}
+.swipe .dots{display:inline-flex;gap:6px}
+.swipe .dots i{width:8px;height:8px;border-radius:99px;background:rgba(255,255,255,.25);transition:width .3s,background .3s}
+.swipe .dots i.on{width:22px;background:var(--sun)}
+.swipe .sw-arw{color:var(--sun);font-size:18px;animation:swipehint 1.4s ease-in-out infinite}
+@keyframes swipehint{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
+.ptabs{display:none}
 @media (max-width:960px){
-  .cards{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding:18px 4px 8px;margin-inline:-4px;scrollbar-width:none;overscroll-behavior-x:contain;touch-action:pan-x pan-y}
+  .cards{position:relative;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding:18px 4px 8px;margin-inline:-4px;scrollbar-width:none;overscroll-behavior-x:contain;touch-action:pan-x pan-y}
   .cards::-webkit-scrollbar{display:none}
-  .card{flex:0 0 min(86%,380px);scroll-snap-align:center}
-  .swipe{display:block}
+  .card{flex:0 0 min(84%,380px);scroll-snap-align:center}
+  .swipe{display:flex}
+  .ptabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:22px}
+  .pt{font:inherit;cursor:pointer;border:2px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);color:var(--deep-ink);border-radius:16px;padding:12px 8px;display:flex;flex-direction:column;align-items:center;gap:3px;text-align:center;transition:background .25s,border-color .25s,color .25s,transform .25s}
+  .pt b{font-size:16px;font-weight:800;letter-spacing:-.01em;line-height:1.1}
+  .pt span{font-size:11.5px;color:var(--deep-muted);line-height:1.2}
+  .pt.on{background:#FFFCF6;border-color:#FFFCF6;color:#1F2A22;transform:translateY(-2px)}
+  .pt3.on{background:#F6C445;border-color:#F6C445}
+  .pt6.on{background:#F8C9C0;border-color:#F8C9C0}
+  .pt.on span{color:#3A3A22}
 }
 
 /* DÚVIDAS */
@@ -596,13 +610,18 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
           <p>Todas começam pela mesma primeira consulta completa. Toque no formato que faz sentido pra você e a conversa já começa no WhatsApp, com os valores e horários.</p>
         </div>
       </div>
+      <div class="ptabs" id="ptabs" role="tablist" aria-label="Escolha o formato">
+        <button type="button" class="pt on" data-i="0" role="tab" aria-selected="true"><b>Individual</b><span>1 + retorno</span></button>
+        <button type="button" class="pt pt3" data-i="1" role="tab" aria-selected="false"><b>3 meses</b><span>3 consultas</span></button>
+        <button type="button" class="pt pt6" data-i="2" role="tab" aria-selected="false"><b>6 meses</b><span>6 consultas</span></button>
+      </div>
       <div class="cards wait" id="cards">
         <a class="card" href="https://wa.me/5551989371332?text=Ol%C3%A1%2C%20Eduarda%21%20Vim%20pelo%20site%20e%20tenho%20interesse%20na%20Consulta%20individual." target="_blank" rel="noopener" aria-label="Quero a consulta individual: abre o WhatsApp">
           <span class="kind">Pra começar</span>
           <h3>Consulta individual</h3>
           <div class="price"><span class="val" data-to="1">1</span><span class="per">consulta + 1 retorno</span></div>
           <p class="total">Consulta de 1h a 1h30 e retorno de 30 min</p>
-          <ul><li><svg aria-hidden="true"><use href="#i-check-g"/></svg>Avaliação clínica e nutricional individualizada</li><li><svg aria-hidden="true"><use href="#i-check-g"/></svg>Planejamento alimentar personalizado</li><li><svg aria-hidden="true"><use href="#i-check-g"/></svg>Solicitação de exames, quando necessário</li><li><svg aria-hidden="true"><use href="#i-check-g"/></svg>Prescrição de suplementação, quando indicada</li><li><svg aria-hidden="true"><use href="#i-check-g"/></svg>1 retorno para acompanhamento e ajustes</li></ul>
+          <ul><li><svg aria-hidden="true"><use href="#i-check-g"/></svg>Avaliação clínica e nutricional individualizada</li><li><svg aria-hidden="true"><use href="#i-check-g"/></svg>Planejamento alimentar personalizado</li><li><svg aria-hidden="true"><use href="#i-check-g"/></svg>Solicitação de exames, quando necessário</li><li><svg aria-hidden="true"><use href="#i-check-g"/></svg>Prescrição de suplementação, quando indicada</li><li><svg aria-hidden="true"><use href="#i-check-g"/></svg>1 retorno para acompanhamento e ajustes</li><li><svg aria-hidden="true"><use href="#i-check-g"/></svg>Dúvidas pelo WhatsApp até o retorno</li></ul>
           <span class="btn btn-ghost">Quero a consulta individual <span class="arw" aria-hidden="true">→</span></span>
         </a>
         <a class="card feat" href="https://wa.me/5551989371332?text=Ol%C3%A1%2C%20Eduarda%21%20Vim%20pelo%20site%20e%20tenho%20interesse%20no%20Acompanhamento%20de%203%20meses." target="_blank" rel="noopener" aria-label="Quero os 3 meses: abre o WhatsApp">
@@ -622,7 +641,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
           <span class="btn btn-primary">Quero os 6 meses <span class="arw" aria-hidden="true">→</span></span>
         </a>
         </div>
-      <p class="swipe">Arrasta pro lado pra ver os outros planos →</p>
+      <div class="swipe"><span class="dots" id="pdots"><i class="on"></i><i></i><i></i></span><span>Arrasta pro lado pra ver os outros planos</span><span class="sw-arw" aria-hidden="true">→</span></div>
       <div class="compare rise">
         <h3>O que cada formato inclui</h3>
         <div class="tbl"><table>
@@ -635,7 +654,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
             <tr><th scope="row">Solicitação e avaliação de exames, quando necessário</th><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td></tr>
             <tr><th scope="row">Suplementação, quando indicada</th><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td></tr>
             <tr class="sec"><th colspan="4" scope="colgroup">Assessoria nutricional</th></tr>
-            <tr><th scope="row">Dúvidas pelo WhatsApp entre as consultas</th><td><span class="no" aria-label="Não inclui">–</span></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td></tr>
+            <tr><th scope="row">Dúvidas pelo WhatsApp</th><td><span class="qt"><small>até o retorno</small></span></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td></tr>
             <tr><th scope="row">Aulão ou live mensal em grupo sobre educação alimentar</th><td><span class="no" aria-label="Não inclui">–</span></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td></tr>
             <tr><th scope="row">E-books educativos</th><td><span class="no" aria-label="Não inclui">–</span></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td></tr>
             <tr><th scope="row">E-books para datas comemorativas</th><td><span class="no" aria-label="Não inclui">–</span></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td></tr>
@@ -782,5 +801,16 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
 })();
 </script>
 
+<script>
+(function(){
+  var cards=document.getElementById('cards'),tabs=[].slice.call(document.querySelectorAll('#ptabs .pt')),dots=[].slice.call(document.querySelectorAll('#pdots i'));
+  if(!cards||!tabs.length)return;
+  var list=[].slice.call(cards.querySelectorAll('.card'));
+  function set(i){tabs.forEach(function(t,k){t.classList.toggle('on',k===i);t.setAttribute('aria-selected',k===i?'true':'false')});dots.forEach(function(d,k){d.classList.toggle('on',k===i)});}
+  tabs.forEach(function(t){t.addEventListener('click',function(){var i=+t.getAttribute('data-i'),c=list[i];cards.scrollTo({left:c.offsetLeft-(cards.clientWidth-c.offsetWidth)/2,behavior:'smooth'});set(i);});});
+  var tk=false;
+  cards.addEventListener('scroll',function(){if(tk)return;tk=true;requestAnimationFrame(function(){tk=false;var mid=cards.scrollLeft+cards.clientWidth/2,best=0,bd=1e9;list.forEach(function(c,k){var d=Math.abs(c.offsetLeft+c.offsetWidth/2-mid);if(d<bd){bd=d;best=k}});set(best);});},{passive:true});
+})();
+</script>
 </body>
 </html>
