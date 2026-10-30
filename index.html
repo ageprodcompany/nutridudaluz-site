@@ -346,6 +346,33 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
 .rise{transition:transform 1s cubic-bezier(.2,.8,.2,1)}
 .js .rise.wait{transform:translateY(34px)}
 @media (hover:none){.card:hover,.cred:hover{transform:none}}
+/* comparativo */
+.compare{margin-top:36px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--r-lg);padding:clamp(20px,3vw,36px)}
+.compare h3{color:var(--deep-ink);font-size:clamp(22px,2.2vw,30px);letter-spacing:-.02em;margin-bottom:18px}
+.compare table{width:100%;border-collapse:collapse;color:var(--deep-ink);font-size:16px}
+.compare th,.compare td{padding:12px 10px;border-bottom:1px solid rgba(255,255,255,.08);text-align:center;vertical-align:middle}
+.compare tbody th{text-align:left;font-weight:400;color:var(--deep-muted);line-height:1.35}
+.compare thead th{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--deep-ink);line-height:1.2;padding-bottom:14px;width:16%}
+.compare thead th:first-child{width:auto}
+.compare thead th.hl{color:#1F2A22;background:var(--sun);border-radius:12px 12px 0 0}
+.compare tbody td:nth-child(3){background:rgba(246,196,69,.08)}
+.compare tr.sec th{text-align:left;padding-top:22px;font-size:12.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--sun)}
+.compare tr.sec th{background:transparent}
+.compare svg.y{width:20px;height:20px;display:inline-block;vertical-align:middle}
+.compare .no{color:rgba(255,255,255,.3);font-weight:800}
+.compare td b{font-size:19px;font-weight:800;color:var(--sun)}
+.compare tbody tr:not(.sec):hover th{color:var(--deep-ink)}
+.compare tbody tr:not(.sec):hover{background:rgba(255,255,255,.03)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@media (max-width:600px){
+  .compare{padding:18px 14px}
+  .compare table{font-size:14.5px}
+  .compare th,.compare td{padding:11px 4px}
+  .compare thead th{font-size:10px;letter-spacing:.03em;width:17%}
+  .compare tbody th{font-size:14.5px}
+  .compare tbody th{padding-right:8px}
+  .compare svg.y{width:18px;height:18px}
+}
 /* leitura no celular */
 @media (max-width:600px){
   body{font-size:17.5px}
@@ -378,6 +405,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#E8483B"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-check-t" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#9FCB6E"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#0D1811" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-check-g" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#1F5A35"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#FBF1DE" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
 </svg>
 
@@ -415,7 +443,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
       </div>
       <div class="facts">
         <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="#E8483B" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>1h a 1h30</b><span>primeira consulta</span></div></div>
-        <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="#E8483B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></svg><div><b>30 min</b><span>cada retorno</span></div></div>
+        <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="#E8483B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></svg><div><b>1 por mês</b><span>consulta nos planos</span></div></div>
         <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="#E8483B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><div><b>3 ou 6 meses</b><span>com assessoria</span></div></div>
       </div>
     </div>
@@ -510,12 +538,12 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
           <div class="n">03</div>
           <div class="body">
             <h3>Cuidar</h3>
-            <span class="time">Retornos · cerca de 30 min</span>
+            <span class="time">Retorno ou consultas mensais</span>
             <p class="one">Um plano feito pra você, ajustado ao longo do caminho.</p>
             <ul>
               <li>Planejamento alimentar individualizado, fundamentado na ciência e adaptado à sua realidade.</li>
               <li>Suplementação nutricional, quando necessário.</li>
-              <li>Nos retornos: evolução, dúvidas e ajustes das estratégias.</li>
+              <li>No retorno ou nas consultas mensais: evolução, dúvidas e ajustes das estratégias.</li>
             </ul>
           </div>
         </article>
@@ -529,13 +557,13 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
         <div class="sh">
           <span class="tag">Acompanhamento</span>
           <h2>O cuidado não termina na primeira consulta.</h2>
-          <p>A consulta é o ponto de partida. É na rotina que as estratégias acontecem, e nos retornos a gente:</p>
+          <p>A consulta é o ponto de partida. É na rotina que as estratégias acontecem, e nos encontros seguintes a gente:</p>
         </div>
         <ul class="check">
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>Avalia sua evolução e conversa sobre as dificuldades</li>
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>Analisa os resultados dos exames, quando solicitados</li>
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>Ajusta o plano alimentar e a suplementação, quando indicada</li>
-          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Nos planos de 3 e 6 meses, você tem assessoria entre as consultas</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Nos planos de 3 e 6 meses, você tem assessoria com aulão mensal, e-books e materiais entre as consultas</li>
         </ul>
       </div>
       <div class="photos">
@@ -566,21 +594,43 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
         <a class="card feat" href="https://wa.me/5551989371332?text=Ol%C3%A1%2C%20Eduarda%21%20Vim%20pelo%20site%20e%20tenho%20interesse%20no%20Acompanhamento%20de%203%20meses." target="_blank" rel="noopener" aria-label="Quero os 3 meses: abre o WhatsApp">
           <span class="flag">Com assessoria</span><span class="kind">3 meses</span>
           <h3>Acompanhamento de 3 meses</h3>
-          <div class="price"><span class="val" data-to="3">3</span><span class="per">consultas em 3 meses</span></div>
-          <p class="total">Com assessoria nutricional durante todo o período</p>
-          <ul><li><svg aria-hidden="true"><use href="#i-check-g"/></svg>Primeira consulta de 1h a 1h30</li><li><svg aria-hidden="true"><use href="#i-check-g"/></svg>Planejamento alimentar e ajustes individualizados</li><li><svg aria-hidden="true"><use href="#i-check-g"/></svg>Avaliação de exames e suplementação, quando indicada</li><li><svg aria-hidden="true"><use href="#i-check-g"/></svg>Assessoria nutricional durante os 3 meses</li></ul>
+          <div class="price"><span class="val" data-to="3">3</span><span class="per">consultas, 1 por mês</span></div>
+          <p class="total">Sem retornos avulsos: o acompanhamento acontece nas consultas mensais e na assessoria</p>
+          <ul><li><svg aria-hidden="true"><use href="#i-check-g"/></svg>1 consulta por mês, a primeira de 1h a 1h30</li><li><svg aria-hidden="true"><use href="#i-check-g"/></svg>Planejamento alimentar ajustado a cada consulta</li><li><svg aria-hidden="true"><use href="#i-check-g"/></svg>Avaliação de exames e suplementação, quando indicada</li><li><svg aria-hidden="true"><use href="#i-check-g"/></svg><span><b>Assessoria:</b> aulão ao vivo mensal em grupo, e-books e materiais de apoio</span></li></ul>
           <span class="btn btn-primary">Quero os 3 meses <span class="arw" aria-hidden="true">→</span></span>
         </a>
         <a class="card" href="https://wa.me/5551989371332?text=Ol%C3%A1%2C%20Eduarda%21%20Vim%20pelo%20site%20e%20tenho%20interesse%20no%20Acompanhamento%20de%206%20meses." target="_blank" rel="noopener" aria-label="Quero os 6 meses: abre o WhatsApp">
           <span class="flag">Com assessoria</span><span class="kind">6 meses</span>
           <h3>Acompanhamento de 6 meses</h3>
-          <div class="price"><span class="val" data-to="6">6</span><span class="per">consultas em 6 meses</span></div>
-          <p class="total">Com assessoria nutricional durante todo o período</p>
-          <ul><li><svg aria-hidden="true"><use href="#i-check-g"/></svg>Primeira consulta de 1h a 1h30</li><li><svg aria-hidden="true"><use href="#i-check-g"/></svg>Planejamento alimentar e ajustes individualizados</li><li><svg aria-hidden="true"><use href="#i-check-g"/></svg>Avaliação de exames e suplementação, quando indicada</li><li><svg aria-hidden="true"><use href="#i-check-g"/></svg>Assessoria nutricional durante os 6 meses</li></ul>
+          <div class="price"><span class="val" data-to="6">6</span><span class="per">consultas, 1 por mês</span></div>
+          <p class="total">Sem retornos avulsos: o acompanhamento acontece nas consultas mensais e na assessoria</p>
+          <ul><li><svg aria-hidden="true"><use href="#i-check-g"/></svg>1 consulta por mês, a primeira de 1h a 1h30</li><li><svg aria-hidden="true"><use href="#i-check-g"/></svg>Planejamento alimentar ajustado a cada consulta</li><li><svg aria-hidden="true"><use href="#i-check-g"/></svg>Avaliação de exames e suplementação, quando indicada</li><li><svg aria-hidden="true"><use href="#i-check-g"/></svg><span><b>Assessoria:</b> aulão ao vivo mensal em grupo, e-books e materiais de apoio</span></li></ul>
           <span class="btn btn-primary">Quero os 6 meses <span class="arw" aria-hidden="true">→</span></span>
         </a>
         </div>
       <p class="swipe">Arrasta pro lado pra ver os outros planos →</p>
+      <div class="compare rise">
+        <h3>O que cada formato inclui</h3>
+        <div class="tbl"><table>
+          <thead><tr><th scope="col"><span class="sr">Item</span></th><th scope="col">Consulta<br>individual</th><th scope="col" class="hl">3 meses</th><th scope="col">6 meses</th></tr></thead>
+          <tbody>
+            <tr class="sec"><th colspan="4" scope="colgroup">Consultas</th></tr>
+            <tr><th scope="row">Primeira consulta completa, de 1h a 1h30</th><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td></tr>
+            <tr><th scope="row">Retorno</th><td><b>1</b></td><td><span class="no" aria-label="Não inclui">–</span></td><td><span class="no" aria-label="Não inclui">–</span></td></tr>
+            <tr><th scope="row">Consultas mensais</th><td><span class="no" aria-label="Não inclui">–</span></td><td><b>3</b></td><td><b>6</b></td></tr>
+            <tr><th scope="row">Planejamento alimentar individualizado</th><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td></tr>
+            <tr><th scope="row">Solicitação e avaliação de exames, quando necessário</th><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td></tr>
+            <tr><th scope="row">Suplementação, quando indicada</th><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td></tr>
+            <tr class="sec"><th colspan="4" scope="colgroup">Assessoria nutricional</th></tr>
+            <tr><th scope="row">Aulão ou live mensal em grupo sobre educação alimentar</th><td><span class="no" aria-label="Não inclui">–</span></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td></tr>
+            <tr><th scope="row">E-books educativos</th><td><span class="no" aria-label="Não inclui">–</span></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td></tr>
+            <tr><th scope="row">E-books para datas comemorativas</th><td><span class="no" aria-label="Não inclui">–</span></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td></tr>
+            <tr><th scope="row">Lista de compras e marcas indicadas</th><td><span class="no" aria-label="Não inclui">–</span></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td></tr>
+            <tr><th scope="row">Novos produtos e novos estudos</th><td><span class="no" aria-label="Não inclui">–</span></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td></tr>
+            <tr><th scope="row">Materiais educativos complementares</th><td><span class="no" aria-label="Não inclui">–</span></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td><td><svg class="y" aria-label="Inclui"><use href="#i-check-t"/></svg></td></tr>
+          </tbody>
+        </table></div>
+      </div>
       <p class="note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span>Exames e suplementos são indicados conforme a avaliação e dentro das competências da nutricionista. Custos de exames e produtos não estão incluídos no acompanhamento.</span></p>
     </div>
   </section>
@@ -609,7 +659,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
         </details>
         <details>
           <summary>Qual a diferença entre a consulta individual e os planos? <span class="pm" aria-hidden="true"></span></summary>
-          <p>A consulta individual inclui a avaliação nutricional e um retorno. Os planos oferecem acompanhamento por três ou seis meses, com consultas periódicas e assessoria nutricional durante o período contratado.</p>
+          <p>A consulta individual inclui a avaliação nutricional e um retorno. Os planos de três ou seis meses têm uma consulta por mês e assessoria nutricional durante todo o período: aulão ao vivo mensal em grupo, e-books e materiais de apoio.</p>
         </details>
         <details>
           <summary>Preciso mudar toda a minha alimentação de uma vez? <span class="pm" aria-hidden="true"></span></summary>
